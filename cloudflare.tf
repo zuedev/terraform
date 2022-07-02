@@ -72,11 +72,11 @@ resource "cloudflare_record" "zue-dot-dev-www-redirect" {
 
 resource "cloudflare_page_rule" "zue-dot-dev-www-redirect" {
   zone_id = cloudflare_zone.zue-dot-dev.id
-  target  = "*${cloudflare_zone.zue-dot-dev.zone}*"
+  target  = "www.${cloudflare_zone.zue-dot-dev.zone}/*"
 
   actions {
     forwarding_url {
-      url         = "https://zue.dev"
+      url         = "https://zue.dev/$1"
       status_code = "301"
     }
   }
