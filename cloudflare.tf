@@ -4,5 +4,7 @@ provider "cloudflare" {
 }
 
 resource "cloudflare_zone" "zue-dot-dev" {
-    zone = "zue.dev"
+  zone = "zue.dev"
+  jump_start = true
+  plan = "pro"
 }
