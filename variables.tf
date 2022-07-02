@@ -5,3 +5,7 @@ variable "cloudflare_email" {
 variable "cloudflare_api_key" {
   type = string
 }
+
+variable "google_credentials" {
+  type = string
+}
