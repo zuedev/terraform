@@ -54,67 +54,16 @@ resource "cloudflare_argo" "zue-dot-dev-argo" {
   smart_routing  = "on"
 }
 
-resource "cloudflare_record" "zue-dot-dev-domain-forward-a-1" {
+resource "cloudflare_record" "zue-dot-dev-root-github-pages" {
   zone_id = cloudflare_zone.zue-dot-dev.id
   name    = "@"
-  value   = "216.239.32.21"
-  type    = "A"
-}
-
-resource "cloudflare_record" "zue-dot-dev-domain-forward-a-2" {
-  zone_id = cloudflare_zone.zue-dot-dev.id
-  name    = "@"
-  value   = "216.239.34.21"
-  type    = "A"
-}
-
-resource "cloudflare_record" "zue-dot-dev-domain-forward-a-3" {
-  zone_id = cloudflare_zone.zue-dot-dev.id
-  name    = "@"
-  value   = "216.239.36.21"
-  type    = "A"
-}
-
-resource "cloudflare_record" "zue-dot-dev-domain-forward-a-4" {
-  zone_id = cloudflare_zone.zue-dot-dev.id
-  name    = "@"
-  value   = "216.239.38.21"
-  type    = "A"
-}
-
-resource "cloudflare_record" "zue-dot-dev-domain-forward-aaaa-1" {
-  zone_id = cloudflare_zone.zue-dot-dev.id
-  name    = "@"
-  value   = "2001:4860:4802:32::15"
-  type    = "AAAA"
-}
-
-resource "cloudflare_record" "zue-dot-dev-domain-forward-aaaa-2" {
-  zone_id = cloudflare_zone.zue-dot-dev.id
-  name    = "@"
-  value   = "2001:4860:4802:34::15"
-  type    = "AAAA"
-}
-
-resource "cloudflare_record" "zue-dot-dev-domain-forward-aaaa-3" {
-  zone_id = cloudflare_zone.zue-dot-dev.id
-  name    = "@"
-  value   = "2001:4860:4802:36::15"
-  type    = "AAAA"
-}
-
-resource "cloudflare_record" "zue-dot-dev-domain-forward-aaaa-4" {
-  zone_id = cloudflare_zone.zue-dot-dev.id
-  name    = "@"
-  value   = "2001:4860:4802:38::15"
-  type    = "AAAA"
-}
-
-resource "cloudflare_record" "zue-dot-dev-domain-forward-cname" {
-  zone_id = cloudflare_zone.zue-dot-dev.id
-  name    = "www"
-  value   = "ghs.googlehosted.com"
+  value   = "zuedev.github.io"
   type    = "CNAME"
+}
+
+resource "cloudflare_page_rule" "zue-dot-dev-www-redirect" {
+  zone_id = cloudflare_zone.zue-dot-dev.id
+  target  = "*${cloudflare_zone.zue-dot-dev.zone}*"
 }
 
 resource "cloudflare_record" "zue-dot-dev-email-forward-mx-1" {
