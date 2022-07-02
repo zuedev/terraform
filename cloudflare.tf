@@ -48,6 +48,12 @@ resource "cloudflare_zone_settings_override" "zue-dot-dev-settings" {
   }
 }
 
+resource "cloudflare_argo" "zue-dot-dev-argo" {
+  zone_id        = cloudflare_zone.zue-dot-dev.id
+  tiered_caching = "on"
+  smart_routing  = "on"
+}
+
 resource "cloudflare_record" "domain-forward-a-1" {
   zone_id = cloudflare_zone.zue-dot-dev.id
   name    = "@"
