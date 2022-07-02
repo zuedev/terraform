@@ -12,6 +12,7 @@ resource "cloudflare_zone" "zue-dot-dev" {
 resource "cloudflare_zone_settings_override" "zue-dot-dev-settings" {
     zone_id = cloudflare_zone.zue-dot-dev.id
     settings {
+      always_use_https = "on"
       development_mode = "off"
     }
 }
