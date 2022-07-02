@@ -4,27 +4,31 @@ provider "cloudflare" {
 }
 
 resource "cloudflare_zone" "zue-dot-dev" {
-  zone = "zue.dev"
+  zone       = "zue.dev"
   jump_start = true
-  plan = "pro"
+  plan       = "pro"
 }
 
 resource "cloudflare_zone_settings_override" "zue-dot-dev-settings" {
-    zone_id = cloudflare_zone.zue-dot-dev.id
-    settings {
-      always_online = "on"
-      always_use_https = "on"
-      automatic_https_rewrites = "on"
-      brotli = "on"
-      browser_check = "on"
-      development_mode = "off"
-      early_hints = "on"
-      email_obfuscation = "on"
-      hotlink_protection = "off"
-      http2 = "on"
-      http3 = "on"
-      
+  zone_id = cloudflare_zone.zue-dot-dev.id
+  settings {
+    always_online            = "on"
+    always_use_https         = "on"
+    automatic_https_rewrites = "on"
+    brotli                   = "on"
+    browser_check            = "on"
+    development_mode         = "off"
+    early_hints              = "on"
+    email_obfuscation        = "on"
+    hotlink_protection       = "off"
+    http2                    = "on"
+    http3                    = "on"
+    minify {
+      css  = "on"
+      js   = "on"
+      html = "on"
     }
+  }
 }
 
 resource "cloudflare_record" "domain-forward-a-1" {
@@ -91,41 +95,41 @@ resource "cloudflare_record" "domain-forward-cname" {
 }
 
 resource "cloudflare_record" "email-forward-mx-1" {
-  zone_id = cloudflare_zone.zue-dot-dev.id
-  name    = "@"
+  zone_id  = cloudflare_zone.zue-dot-dev.id
+  name     = "@"
   priority = "0"
-  value   = "gmr-smtp-in.l.google.com"
-  type    = "MX"
+  value    = "gmr-smtp-in.l.google.com"
+  type     = "MX"
 }
 
 resource "cloudflare_record" "email-forward-mx-2" {
-  zone_id = cloudflare_zone.zue-dot-dev.id
-  name    = "@"
+  zone_id  = cloudflare_zone.zue-dot-dev.id
+  name     = "@"
   priority = "10"
-  value   = "alt1.gmr-smtp-in.l.google.com"
-  type    = "MX"
+  value    = "alt1.gmr-smtp-in.l.google.com"
+  type     = "MX"
 }
 
 resource "cloudflare_record" "email-forward-mx-3" {
-  zone_id = cloudflare_zone.zue-dot-dev.id
-  name    = "@"
+  zone_id  = cloudflare_zone.zue-dot-dev.id
+  name     = "@"
   priority = "20"
-  value   = "alt2.gmr-smtp-in.l.google.com"
-  type    = "MX"
+  value    = "alt2.gmr-smtp-in.l.google.com"
+  type     = "MX"
 }
 
 resource "cloudflare_record" "email-forward-mx-4" {
-  zone_id = cloudflare_zone.zue-dot-dev.id
-  name    = "@"
+  zone_id  = cloudflare_zone.zue-dot-dev.id
+  name     = "@"
   priority = "30"
-  value   = "alt3.gmr-smtp-in.l.google.com"
-  type    = "MX"
+  value    = "alt3.gmr-smtp-in.l.google.com"
+  type     = "MX"
 }
 
 resource "cloudflare_record" "email-forward-mx-5" {
-  zone_id = cloudflare_zone.zue-dot-dev.id
-  name    = "@"
+  zone_id  = cloudflare_zone.zue-dot-dev.id
+  name     = "@"
   priority = "40"
-  value   = "alt4.gmr-smtp-in.l.google.com"
-  type    = "MX"
+  value    = "alt4.gmr-smtp-in.l.google.com"
+  type     = "MX"
 }
