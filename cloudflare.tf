@@ -21,7 +21,6 @@ resource "cloudflare_record" "domain-forward-a-1" {
   name    = "@"
   value   = "216.239.32.21"
   type    = "A"
-  ttl     = 3600
 }
 
 resource "cloudflare_record" "domain-forward-a-2" {
@@ -29,7 +28,6 @@ resource "cloudflare_record" "domain-forward-a-2" {
   name    = "@"
   value   = "216.239.34.21"
   type    = "A"
-  ttl     = 3600
 }
 
 resource "cloudflare_record" "domain-forward-a-3" {
@@ -37,7 +35,6 @@ resource "cloudflare_record" "domain-forward-a-3" {
   name    = "@"
   value   = "216.239.36.21"
   type    = "A"
-  ttl     = 3600
 }
 
 resource "cloudflare_record" "domain-forward-a-4" {
@@ -45,7 +42,6 @@ resource "cloudflare_record" "domain-forward-a-4" {
   name    = "@"
   value   = "216.239.38.21"
   type    = "A"
-  ttl     = 3600
 }
 
 resource "cloudflare_record" "domain-forward-aaaa-1" {
@@ -53,7 +49,6 @@ resource "cloudflare_record" "domain-forward-aaaa-1" {
   name    = "@"
   value   = "2001:4860:4802:32::15"
   type    = "AAAA"
-  ttl     = 3600
 }
 
 resource "cloudflare_record" "domain-forward-aaaa-2" {
@@ -61,7 +56,6 @@ resource "cloudflare_record" "domain-forward-aaaa-2" {
   name    = "@"
   value   = "2001:4860:4802:34::15"
   type    = "AAAA"
-  ttl     = 3600
 }
 
 resource "cloudflare_record" "domain-forward-aaaa-3" {
@@ -69,7 +63,6 @@ resource "cloudflare_record" "domain-forward-aaaa-3" {
   name    = "@"
   value   = "2001:4860:4802:36::15"
   type    = "AAAA"
-  ttl     = 3600
 }
 
 resource "cloudflare_record" "domain-forward-aaaa-4" {
@@ -77,7 +70,6 @@ resource "cloudflare_record" "domain-forward-aaaa-4" {
   name    = "@"
   value   = "2001:4860:4802:38::15"
   type    = "AAAA"
-  ttl     = 3600
 }
 
 resource "cloudflare_record" "domain-forward-cname" {
@@ -85,7 +77,6 @@ resource "cloudflare_record" "domain-forward-cname" {
   name    = "www"
   value   = "ghs.googlehosted.com"
   type    = "CNAME"
-  ttl     = 3600
 }
 
 resource "cloudflare_record" "email-forward-mx-1" {
@@ -94,7 +85,6 @@ resource "cloudflare_record" "email-forward-mx-1" {
   priority = "0"
   value   = "gmr-smtp-in.l.google.com"
   type    = "MX"
-  ttl     = 3600
 }
 
 resource "cloudflare_record" "email-forward-mx-2" {
@@ -103,7 +93,6 @@ resource "cloudflare_record" "email-forward-mx-2" {
   priority = "10"
   value   = "alt1.gmr-smtp-in.l.google.com"
   type    = "MX"
-  ttl     = 3600
 }
 
 resource "cloudflare_record" "email-forward-mx-3" {
@@ -112,7 +101,6 @@ resource "cloudflare_record" "email-forward-mx-3" {
   priority = "20"
   value   = "alt2.gmr-smtp-in.l.google.com"
   type    = "MX"
-  ttl     = 3600
 }
 
 resource "cloudflare_record" "email-forward-mx-4" {
@@ -121,7 +109,6 @@ resource "cloudflare_record" "email-forward-mx-4" {
   priority = "30"
   value   = "alt3.gmr-smtp-in.l.google.com"
   type    = "MX"
-  ttl     = 3600
 }
 
 resource "cloudflare_record" "email-forward-mx-5" {
@@ -130,5 +117,4 @@ resource "cloudflare_record" "email-forward-mx-5" {
   priority = "40"
   value   = "alt4.gmr-smtp-in.l.google.com"
   type    = "MX"
-  ttl     = 3600
 }
