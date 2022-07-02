@@ -15,9 +15,15 @@ resource "cloudflare_zone_settings_override" "zue-dot-dev-settings" {
       always_online = "on"
       always_use_https = "on"
       automatic_https_rewrites = "on"
+      brotli = "on"
+      browser_check = "on"
+      development_mode = "off"
+      early_hints = "on"
+      email_obfuscation = "on"
+      hotlink_protection = "off"
       http2 = "on"
       http3 = "on"
-      development_mode = "off"
+      
     }
 }
 
