@@ -59,6 +59,15 @@ resource "cloudflare_record" "zue-dot-dev-root-github-pages" {
   name    = "@"
   value   = "zuedev.github.io"
   type    = "CNAME"
+  proxied = true
+}
+
+resource "cloudflare_record" "zue-dot-dev-www-redirect" {
+  zone_id = cloudflare_zone.zue-dot-dev.id
+  name    = "www"
+  value   = "zue.dev"
+  type    = "CNAME"
+  proxied = true
 }
 
 resource "cloudflare_page_rule" "zue-dot-dev-www-redirect" {
