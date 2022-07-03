@@ -32,7 +32,6 @@ resource "cloudflare_zone_settings_override" "unnamed-dot-group-settings" {
     security_level = "high"
     ssl            = "strict"
     tls_1_3        = "zrt"
-    webp           = "on"
     websockets     = "on"
     zero_rtt       = "on"
   }
