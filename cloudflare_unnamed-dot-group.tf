@@ -13,7 +13,6 @@ resource "cloudflare_zone_settings_override" "unnamed-dot-group-settings" {
     email_obfuscation        = "off"
     h2_prioritization        = "on"
     hotlink_protection       = "off"
-    http2                    = "on"
     http3                    = "on"
     min_tls_version          = "1.3"
     minify {
