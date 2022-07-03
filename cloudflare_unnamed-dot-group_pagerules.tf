@@ -9,3 +9,15 @@ resource "cloudflare_page_rule" "unnamed-dot-group-discord-redirect" {
     }
   }
 }
+
+resource "cloudflare_page_rule" "unnamed-dot-group-www-redirect" {
+  zone_id = cloudflare_zone.unnamed-dot-group.id
+  target  = "www.${cloudflare_zone.unnamed-dot-group.zone}/*"
+
+  actions {
+    forwarding_url {
+      url         = "https://unnamed.group/$1"
+      status_code = "301"
+    }
+  }
+}
