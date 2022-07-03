@@ -10,23 +10,19 @@ resource "cloudflare_zone_settings_override" "unnamed-dot-group-settings" {
     always_use_https         = "on"
     automatic_https_rewrites = "on"
     brotli                   = "on"
-    cname_flattening         = "flatten_all"
     email_obfuscation        = "off"
     h2_prioritization        = "on"
     hotlink_protection       = "off"
     http2                    = "on"
     http3                    = "on"
-    image_resizing           = "open"
     min_tls_version          = "1.3"
     minify {
       css  = "on"
       js   = "on"
       html = "on"
     }
-    mirage                   = "on"
     opportunistic_encryption = "on"
     opportunistic_onion      = "on"
-    polish                   = "lossless"
     security_header {
       enabled            = true
       preload            = true
