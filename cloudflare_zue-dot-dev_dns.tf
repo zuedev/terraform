@@ -9,7 +9,7 @@ resource "cloudflare_record" "zue-dot-dev-root-github-pages" {
 resource "cloudflare_record" "zue-dot-dev-www-redirect" {
   zone_id = cloudflare_zone.zue-dot-dev.id
   name    = "www"
-  value   = "zue.dev"
+  value   = "@"
   type    = "CNAME"
   proxied = true
 }
