@@ -3,6 +3,7 @@ resource "cloudflare_record" "unnamed-dot-group-domain-root-gitlab-pages-cname" 
   name    = "@"
   value   = "unnamed-dot-group.gitlab.io"
   type    = "CNAME"
+  proxied = true
 }
 
 resource "cloudflare_record" "unnamed-dot-group-root-gitlab-pages-txt" {
