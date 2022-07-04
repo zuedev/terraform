@@ -12,6 +12,14 @@ resource "cloudflare_record" "unnamed-dot-group-root-gitlab-pages-txt" {
   type    = "TXT"
 }
 
+resource "cloudflare_record" "unnamed-dot-group-domain-www-gitlab-pages-cname" {
+  zone_id = cloudflare_zone.unnamed-dot-group.id
+  name    = "www"
+  value   = "@"
+  type    = "CNAME"
+  proxied = true
+}
+
 resource "cloudflare_record" "unnamed-dot-group-email-forward-mx-1" {
   zone_id  = cloudflare_zone.unnamed-dot-group.id
   name     = "@"
