@@ -1,64 +1,17 @@
-resource "cloudflare_record" "bluebean-dot-games-domain-forward-a-1" {
+resource "cloudflare_record" "bluebean-dot-games-root-github-pages" {
   zone_id = cloudflare_zone.bluebean-dot-games.id
   name    = "@"
-  value   = "216.239.32.21"
-  type    = "A"
+  value   = "blue-bean-games.github.io"
+  type    = "CNAME"
+  proxied = true
 }
 
-resource "cloudflare_record" "bluebean-dot-games-domain-forward-a-2" {
-  zone_id = cloudflare_zone.bluebean-dot-games.id
-  name    = "@"
-  value   = "216.239.34.21"
-  type    = "A"
-}
-
-resource "cloudflare_record" "bluebean-dot-games-domain-forward-a-3" {
-  zone_id = cloudflare_zone.bluebean-dot-games.id
-  name    = "@"
-  value   = "216.239.36.21"
-  type    = "A"
-}
-
-resource "cloudflare_record" "bluebean-dot-games-domain-forward-a-4" {
-  zone_id = cloudflare_zone.bluebean-dot-games.id
-  name    = "@"
-  value   = "216.239.38.21"
-  type    = "A"
-}
-
-resource "cloudflare_record" "bluebean-dot-games-domain-forward-aaaa-1" {
-  zone_id = cloudflare_zone.bluebean-dot-games.id
-  name    = "@"
-  value   = "2001:4860:4802:32::15"
-  type    = "AAAA"
-}
-
-resource "cloudflare_record" "bluebean-dot-games-domain-forward-aaaa-2" {
-  zone_id = cloudflare_zone.bluebean-dot-games.id
-  name    = "@"
-  value   = "2001:4860:4802:34::15"
-  type    = "AAAA"
-}
-
-resource "cloudflare_record" "bluebean-dot-games-domain-forward-aaaa-3" {
-  zone_id = cloudflare_zone.bluebean-dot-games.id
-  name    = "@"
-  value   = "2001:4860:4802:36::15"
-  type    = "AAAA"
-}
-
-resource "cloudflare_record" "bluebean-dot-games-domain-forward-aaaa-4" {
-  zone_id = cloudflare_zone.bluebean-dot-games.id
-  name    = "@"
-  value   = "2001:4860:4802:38::15"
-  type    = "AAAA"
-}
-
-resource "cloudflare_record" "bluebean-dot-games-domain-forward-cname" {
+resource "cloudflare_record" "bluebean-dot-games-www-redirect" {
   zone_id = cloudflare_zone.bluebean-dot-games.id
   name    = "www"
-  value   = "ghs.googlehosted.com"
+  value   = "@"
   type    = "CNAME"
+  proxied = true
 }
 
 resource "cloudflare_record" "bluebean-dot-games-email-forward-mx-1" {
