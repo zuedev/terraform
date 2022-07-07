@@ -121,3 +121,10 @@ resource "cloudflare_record" "bluebean-dot-games-block-sending-emails-3" {
   value   = "v=DMARC1; p=reject; sp=reject; adkim=s; aspf=s; rua=mailto:zuedev@gmail.com"
   type    = "TXT"
 }
+
+resource "cloudflare_record" "bluebean-dot-games-github-verification-txt" {
+  zone_id = cloudflare_zone.bluebean-dot-games.id
+  name    = "_github-pages-challenge-Blue-Bean-Games"
+  value   = "e2b93755c298af3c7b5831d7403675"
+  type    = "TXT"
+}
