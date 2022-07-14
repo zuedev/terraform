@@ -1,64 +1,23 @@
-resource "cloudflare_record" "perturbed-dot-site-domain-forward-a-1" {
+resource "cloudflare_record" "perturbed-dot-site-root-gitlab-pages-a" {
   zone_id = cloudflare_zone.perturbed-dot-site.id
   name    = "@"
-  value   = "216.239.32.21"
-  type    = "A"
+  value   = "unnamed-dot-group.gitlab.io"
+  type    = "CNAME"
 }
 
-resource "cloudflare_record" "perturbed-dot-site-domain-forward-a-2" {
+resource "cloudflare_record" "perturbed-dot-site-root-gitlab-pages-txt" {
   zone_id = cloudflare_zone.perturbed-dot-site.id
-  name    = "@"
-  value   = "216.239.34.21"
-  type    = "A"
+  name    = "_gitlab-pages-verification-code"
+  value   = "gitlab-pages-verification-code=f8857c1f5d96f06c5f81f039468a3cba"
+  type    = "TXT"
 }
 
-resource "cloudflare_record" "perturbed-dot-site-domain-forward-a-3" {
-  zone_id = cloudflare_zone.perturbed-dot-site.id
-  name    = "@"
-  value   = "216.239.36.21"
-  type    = "A"
-}
-
-resource "cloudflare_record" "perturbed-dot-site-domain-forward-a-4" {
-  zone_id = cloudflare_zone.perturbed-dot-site.id
-  name    = "@"
-  value   = "216.239.38.21"
-  type    = "A"
-}
-
-resource "cloudflare_record" "perturbed-dot-site-domain-forward-aaaa-1" {
-  zone_id = cloudflare_zone.perturbed-dot-site.id
-  name    = "@"
-  value   = "2001:4860:4802:32::15"
-  type    = "AAAA"
-}
-
-resource "cloudflare_record" "perturbed-dot-site-domain-forward-aaaa-2" {
-  zone_id = cloudflare_zone.perturbed-dot-site.id
-  name    = "@"
-  value   = "2001:4860:4802:34::15"
-  type    = "AAAA"
-}
-
-resource "cloudflare_record" "perturbed-dot-site-domain-forward-aaaa-3" {
-  zone_id = cloudflare_zone.perturbed-dot-site.id
-  name    = "@"
-  value   = "2001:4860:4802:36::15"
-  type    = "AAAA"
-}
-
-resource "cloudflare_record" "perturbed-dot-site-domain-forward-aaaa-4" {
-  zone_id = cloudflare_zone.perturbed-dot-site.id
-  name    = "@"
-  value   = "2001:4860:4802:38::15"
-  type    = "AAAA"
-}
-
-resource "cloudflare_record" "perturbed-dot-site-domain-forward-cname" {
+resource "cloudflare_record" "perturbed-dot-site-www-redirect" {
   zone_id = cloudflare_zone.perturbed-dot-site.id
   name    = "www"
-  value   = "ghs.googlehosted.com"
+  value   = "@"
   type    = "CNAME"
+  proxied = true
 }
 
 resource "cloudflare_record" "perturbed-dot-site-email-forward-mx-1" {
