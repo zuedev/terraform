@@ -6,7 +6,7 @@ resource "cloudflare_record" "zue-dot-dev_amazon-ses_dkim-cname-1" {
   comment = "TF: apex amazon ses"
 
   type    = "CNAME"
-  name    = "2eytzuztn325iolhi3twrxi3jykyb5jg._domainkey.zue.dev"
+  name    = "2eytzuztn325iolhi3twrxi3jykyb5jg._domainkey"
   value   = "2eytzuztn325iolhi3twrxi3jykyb5jg.dkim.amazonses.com"
   proxied = false
 
@@ -19,7 +19,7 @@ resource "cloudflare_record" "zue-dot-dev_amazon-ses_dkim-cname-2" {
   comment = "TF: apex amazon ses"
 
   type    = "CNAME"
-  name    = "iltwjfurohirkesaa5dtamzufre4bh77._domainkey.zue.dev"
+  name    = "iltwjfurohirkesaa5dtamzufre4bh77._domainkey"
   value   = "iltwjfurohirkesaa5dtamzufre4bh77.dkim.amazonses.com"
   proxied = false
 
@@ -32,7 +32,7 @@ resource "cloudflare_record" "zue-dot-dev_amazon-ses_dkim-cname-3" {
   comment = "TF: apex amazon ses"
 
   type    = "CNAME"
-  name    = "pzvvblxyoxhg24ydtkqiotnltrhfroqu._domainkey.zue.dev"
+  name    = "pzvvblxyoxhg24ydtkqiotnltrhfroqu._domainkey"
   value   = "pzvvblxyoxhg24ydtkqiotnltrhfroqu.dkim.amazonses.com"
   proxied = false
 
@@ -47,7 +47,7 @@ resource "cloudflare_record" "zue-dot-dev_amazon-ses_custom-mail-from-mx" {
   comment = "TF: apex amazon ses"
 
   type     = "MX"
-  name     = "aws-ses.zue.dev"
+  name     = "aws-ses"
   value    = "feedback-smtp.eu-west-2.amazonses.com"
   priority = 10
 
@@ -60,7 +60,7 @@ resource "cloudflare_record" "zue-dot-dev_amazon-ses_custom-mail-from-spf" {
   comment = "TF: apex amazon ses"
 
   type  = "TXT"
-  name  = "aws-ses.zue.dev"
+  name  = "aws-ses"
   value = "v=spf1 include:amazonses.com -all"
 
   allow_overwrite = true
@@ -74,7 +74,7 @@ resource "cloudflare_record" "zue-dot-dev_amazon-ses_dmarc" {
   comment = "TF: apex amazon ses"
 
   type  = "TXT"
-  name  = "_dmarc.zue.dev"
+  name  = "_dmarc"
   value = "v=DMARC1; p=none;"
 
   allow_overwrite = true
