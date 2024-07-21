@@ -29,3 +29,16 @@ resource "cloudflare_record" "zue-dot-dev_www_cname" {
 
   allow_overwrite = true
 }
+
+resource "cloudflare_record" "zue-dot-dev_sovereign_a" {
+  zone_id = data.cloudflare_zones.zue-dot-dev.zones.0.id
+
+  comment = "TF: sovereign server"
+
+  type    = "A"
+  name    = "sovereign"
+  value   = "81.129.128.138"
+  proxied = false
+
+  allow_overwrite = true
+}
