@@ -14,3 +14,14 @@ resource "cloudflare_record" "zue-dot-dev_root_cname" {
 
   allow_overwrite = true
 }
+
+resource "cloudflare_record" "zue-dot-dev_www_cname" {
+  zone_id = data.cloudflare_zones.zue-dot-dev.zones.0.id
+
+  type    = "CNAME"
+  name    = "www"
+  value   = "zue.dev"
+  proxied = true
+
+  allow_overwrite = true
+}
