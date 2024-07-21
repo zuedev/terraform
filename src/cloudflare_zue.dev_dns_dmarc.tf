@@ -1,5 +1,5 @@
 # cloudflare dmarc reporting
-resource "cloudflare_record" "zue-dot-dev_amazon-ses_dmarc" {
+resource "cloudflare_record" "zue-dot-dev_cf-dmarc-reporting" {
   zone_id = data.cloudflare_zones.zue-dot-dev.zones.0.id
 
   comment = "TF: cf dmarc reporting"
