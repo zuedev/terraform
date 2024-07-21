@@ -5,7 +5,7 @@ resource "cloudflare_record" "zue-dot-dev_openai" {
   comment = "TF: openai verification"
 
   type  = "TXT"
-  name  = ""
+  name  = "@"
   value = "openai-domain-verification=dv-DGZaQGLeJGHXRkUmpeX8XlUw"
 
   allow_overwrite = true
