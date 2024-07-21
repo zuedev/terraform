@@ -68,14 +68,15 @@ resource "cloudflare_record" "zue-dot-dev_amazon-ses_custom-mail-from-spf" {
 
 # Domain-based Message Authentication, Reporting, and Conformance (DMARC)
 
-resource "cloudflare_record" "zue-dot-dev_amazon-ses_dmarc" {
-  zone_id = data.cloudflare_zones.zue-dot-dev.zones.0.id
+# REPLACED WITH CLOUDFLARE DMARC MANAGEMENT
+# resource "cloudflare_record" "zue-dot-dev_amazon-ses_dmarc" {
+#   zone_id = data.cloudflare_zones.zue-dot-dev.zones.0.id
 
-  comment = "TF: apex amazon ses"
+#   comment = "TF: apex amazon ses"
 
-  type  = "TXT"
-  name  = "_dmarc"
-  value = "v=DMARC1; p=none;"
+#   type  = "TXT"
+#   name  = "_dmarc"
+#   value = "v=DMARC1; p=none;"
 
-  allow_overwrite = true
-}
+#   allow_overwrite = true
+# }
