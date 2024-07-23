@@ -3,7 +3,7 @@ resource "cloudflare_record" "uagpmc-dot-com_teamspeak_cname" {
 
   comment = "TF: uag ts3 server"
 
-  type    = "A"
+  type    = "CNAME"
   name    = "teamspeak"
   value   = "baldur.zue.dev"
   proxied = false

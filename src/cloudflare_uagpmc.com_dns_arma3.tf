@@ -3,7 +3,7 @@ resource "cloudflare_record" "uagpmc-dot-com_arma3_cname" {
 
   comment = "TF: uag arma3 server"
 
-  type    = "A"
+  type    = "CNAME"
   name    = "arma3"
   value   = "sovereign.zue.dev"
   proxied = false
