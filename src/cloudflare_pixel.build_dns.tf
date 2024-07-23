@@ -1,4 +1,4 @@
-resource "cloudflare_record" "pixel-dot-build_root_cname" {
+resource "cloudflare_record" "pixel-dot-build_root_a" {
   zone_id = data.cloudflare_zones.pixel-dot-build.zones.0.id
 
   comment = "TF: Apex domain to Vercel"
