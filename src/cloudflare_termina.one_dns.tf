@@ -1,5 +1,5 @@
-resource "cloudflare_record" "termina-dot-digital_root_cname" {
-  zone_id = data.cloudflare_zones.termina-dot-digital.zones.0.id
+resource "cloudflare_record" "termina-dot-one_root_cname" {
+  zone_id = data.cloudflare_zones.termina-dot-one.zones.0.id
 
   comment = "TF: Apex domain to CF pages"
 
@@ -11,8 +11,8 @@ resource "cloudflare_record" "termina-dot-digital_root_cname" {
   allow_overwrite = true
 }
 
-resource "cloudflare_record" "termina-dot-digital_www_cname" {
-  zone_id = data.cloudflare_zones.termina-dot-digital.zones.0.id
+resource "cloudflare_record" "termina-dot-one_www_cname" {
+  zone_id = data.cloudflare_zones.termina-dot-one.zones.0.id
 
   comment = "TF: www subdomain to apex domain"
 
