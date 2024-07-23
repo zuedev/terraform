@@ -6,7 +6,7 @@ resource "cloudflare_record" "unnamed-dot-group_root_cname" {
   type    = "CNAME"
   name    = "unnamed.group"
   value   = "www-unnamed-group.pages.dev"
-  proxied = false
+  proxied = true
 
   allow_overwrite = true
 }
