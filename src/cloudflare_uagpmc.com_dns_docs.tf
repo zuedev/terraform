@@ -1,4 +1,4 @@
-resource "cloudflare_record" "uagpmc-dot-com_arma3_cname" {
+resource "cloudflare_record" "uagpmc-dot-com_docs_cname" {
   zone_id = data.cloudflare_zones.uagpmc-dot-com.zones.0.id
 
   comment = "TF: docs cf pages"
