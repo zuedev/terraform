@@ -1,7 +1,7 @@
 resource "cloudflare_record" "uagpmc-dot-com_root_cname" {
   zone_id = data.cloudflare_zones.uagpmc-dot-com.zones.0.id
 
-  comment = "TF: Apex domain to gh pages"
+  comment = "TF: Apex domain to cf pages"
 
   type    = "CNAME"
   name    = "uagpmc.com"
