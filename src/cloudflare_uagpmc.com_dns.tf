@@ -5,8 +5,8 @@ resource "cloudflare_record" "uagpmc-dot-com_root_cname" {
 
   type    = "CNAME"
   name    = "uagpmc.com"
-  value   = "unnamedarmagrouphub.github.io"
-  proxied = false
+  value   = "www-uagpmc-com.pages.dev"
+  proxied = true
 
   allow_overwrite = true
 }
