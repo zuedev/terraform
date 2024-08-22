@@ -15,6 +15,7 @@ resource "azurerm_application_insights_standard_web_test" "zue-dot-dev" {
     "us-va-ash-azr",
     "emea-au-syd-edge"
   ]
+  enabled = true
 
   request {
     url = "https://zue.dev"
