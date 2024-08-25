@@ -1,11 +1,11 @@
-resource "cloudflare_record" "pixel-dot-build_root_a" {
+resource "cloudflare_record" "pixel-dot-build_root_cname" {
   zone_id = data.cloudflare_zones.pixel-dot-build.zones.0.id
 
   comment = "TF: Apex domain to Vercel"
 
-  type    = "A"
+  type    = "CNAME"
   name    = "pixel.build"
-  value   = "76.76.21.21"
+  value   = "www-pixel-build.pages.dev"
   proxied = false
 
   allow_overwrite = true
@@ -18,7 +18,7 @@ resource "cloudflare_record" "pixel-dot-build_www_cname" {
 
   type    = "CNAME"
   name    = "www"
-  value   = "cname.vercel-dns.com"
+  value   = "www-pixel-build.pages.dev"
   proxied = false
 
   allow_overwrite = true
