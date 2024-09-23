@@ -6,7 +6,7 @@ resource "cloudflare_record" "zue-dot-dev_sovereign_a" {
 
   type    = "A"
   name    = "sovereign"
-  value   = "109.154.251.204"
+  value   = "86.139.71.16"
   proxied = false
 
   allow_overwrite = true

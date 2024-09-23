@@ -1,12 +1,12 @@
 # main record for the baldur server
-resource "cloudflare_record" "zue-dot-dev_baldur_a" {
+resource "cloudflare_record" "zue-dot-dev_baldur_cname" {
   zone_id = data.cloudflare_zones.zue-dot-dev.zones.0.id
 
-  comment = "TF: baldur server main (hetzner cloud)"
+  comment = "TF: baldur server main (on sovereign)"
 
-  type    = "A"
+  type    = "CNAME"
   name    = "baldur"
-  value   = "116.203.25.123"
+  value   = "sovereign.zue.dev"
   proxied = false
 
   allow_overwrite = true
